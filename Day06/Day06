@@ -1,6 +1,11 @@
-JPA 주의사항
+####JPA 주의사항
 table 생성 (create) 한후 persistence.xml 에서 value의 "create" --> "none" 로 바꿔야 됨
 
 <property name="hibernate.hbm2ddl.auto" value="create" />
 
 <property name="hibernate.hbm2ddl.auto" value="none" />
+
+
+
+#### demo
+Config, Bean 
