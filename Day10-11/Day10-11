@@ -1,8 +1,15 @@
 Mini Project
-MVC2-chapter 6
+1.MVC2-chapter 6
 Cookie
 querydql
 Login, Password, Item 조회
 Member, Item, Order Controller
 Member, Item, Order HTML
 다음날: 세션
+
+2. querydsl 설계 방법
+2.1. buildgradle 에서 추가
+2.2. loading
+2.3. grandle -> tasks -> builds ( first time: build, secondtime: clean -> build) -> others(compileQuerydsl) -> successful
+2.4. 실치 성공 확인 방법
+build -> generated -> querydsl[main] -> project_name -> Q~~~~ (Class)
