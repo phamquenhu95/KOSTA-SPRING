@@ -1,0 +1,40 @@
+디펜던시
+
+
+
+     //쿼리dsl dependency 추가
+    implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
+    implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
+
+
+플러그인
+
+// 쿼리DSL추가 빌드
+    id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+
+
+
+
+// 쿼리DSL추가 빌드
+def querydslDir = "$buildDir/generated/querydsl"
+querydsl { //쿼리DSL추가 빌드
+    jpa = true
+    querydslSourcesDir = querydslDir
+}
+sourceSets { //쿼리DSL추가 빌드
+    main.java.srcDir querydslDir
+}
+configurations { //쿼리DSL추가 빌드
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    querydsl.extendsFrom compileClasspath
+}
+compileQuerydsl { //쿼리DSL추가 빌드
+    options.annotationProcessorPath = configurations.querydsl
+}
+buildscript { // 쿼리DSL추가 빌드
+    ext {
+        queryDslVersion = "5.0.0"
+    }
+}
